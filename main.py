@@ -1,5 +1,6 @@
 import discord, datetime, requests, json, random, time
 from bs4 import BeautifulSoup
+import os
 
 정책 = """```소울봇 사용 정책```
 ```
@@ -185,4 +186,5 @@ async def on_message(message):
         embed.set_footer(text=f"이 봇에 대한 저작권은 후스다냥#1924 에게 있습니다.", icon_url='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Copyright.svg/170px-Copyright.svg.png')
         await message.channel.send(embed=embed)
         
-client.run('NjQyMzMyMDQyOTc3MDgzNDE1.XcVZyA.xPYNGE0I3UwArHDNjBTMOgMCAEY')
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
